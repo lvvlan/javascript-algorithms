@@ -1,6 +1,8 @@
 # JavaScript经典算法
 
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu) [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
+> 持续更新中。。
 
 本库记录了一些经典的算法题，每道经典算法题下都有详细的讲解，并给出JS执行代码，目的是为了让更多了前端小伙伴了解算法，理解算法背后的原理。
 
