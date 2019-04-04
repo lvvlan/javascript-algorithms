@@ -24,12 +24,7 @@ function foo() {
             if (j < W[i]) {
                 current[j] = prev[j]
             } else {
-                if (prev[j] > (prev[j - W[i]] + V[i])) {
-                    current[j] = prev[j]
-                } else {
-                    current[j] = (prev[j - W[i]] + V[i])
-                }
-                // current[j] = Math.max(prev[j], (prev[j - W[i]] + V[i]))
+                current[j] = Math.max(prev[j], (prev[j - W[i]] + V[i]))
             }
         }
         test.push([...current])
@@ -43,5 +38,5 @@ function foo() {
 
 console.time('运行时间')
 console.log(foo())
-// console.log(test)
+console.log(test)
 console.timeEnd('运行时间')
