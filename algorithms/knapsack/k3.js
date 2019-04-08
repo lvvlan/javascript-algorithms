@@ -17,7 +17,7 @@ function foo() {
     for (let i = 0; i < T + 1; i++) {
         k.push(i < W[0] ? 0 : V[0])
     }
-
+    // console.log(k)
     for (let i = 1; i < W.length; i++) {
         /**
          * 注意这里的倒序循环
@@ -27,7 +27,7 @@ function foo() {
          * 所以这里我们采用倒序，循环的终止条件其实就是j > W[i]，那对于j < W[i]的情况怎么办？
          * 其实我们刚刚已经说过了 如果j < W[i]，k中的元素是不用变化的，解法1中只不过是将这种不用替换写成了一个等价交换：current[j] = prev[j] 意思是一样的
          */
-        for (let j = T; j > W[i]; j--) {
+        for (let j = T; j >= W[i]; j--) {
             k[j] = Math.max(k[j], k[j - W[i]] + V[i])
         }
         // console.log(k)
