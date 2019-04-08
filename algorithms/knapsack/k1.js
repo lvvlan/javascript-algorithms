@@ -1,7 +1,7 @@
 // 物品的重量
-let W = [3, 4, 3,5, 5]
+let W = [3, 3, 4, 5, 5]
 // 物品的价值
-let V = [ 300, 300, 350, 400, 500]
+let V = [ 300, 350, 300, 400, 500]
 // 背包承受总重
 let T = 10
 let test = []
@@ -24,6 +24,14 @@ function foo() {
             if (j < W[i]) {
                 current[j] = prev[j]
             } else {
+                // if (j === 7) {
+                //     console.log(
+                //         [...prev], j, i, '---',
+                //         prev[j], prev[j - W[i]] + V[i], '^^^',
+                //         prev[j - W[i]], V[i]
+                //     )
+                // }
+
                 current[j] = Math.max(prev[j], (prev[j - W[i]] + V[i]))
             }
         }

@@ -1,15 +1,10 @@
 // 物品的重量
-let W = [3, 4, 3,5, 5]
+let W = [3, 3, 4, 5, 5]
 // 物品的价值
-let V = [ 300, 300, 350, 400, 500]
+let V = [ 300, 350, 300, 400, 500]
 // 背包承受总重
 let T = 10
-
-/**
- * 这种方法本质上其实是对index1.js里方法的优化
- * 1方法中我们用了两个数组，分别代表上一行（prev）和当前行（current）
- * 但实际上我们完全可以只用一个数组来操作，本质上就是数组中的【元素替换】，其实大可不必再用另一个数组（prev）来做临时存储
- */
+let test = []
 
 function foo() {
     let k = []
@@ -18,13 +13,46 @@ function foo() {
         k.push(Math.floor(i / W[0]) * V[0])
     }
     console.log(k)
-    for (let i = 1; i < W.length; i++) {
+    for (let i = 1; i < 2; i++) {
         for (let j = W[i]; j < T + 1; j++) {
+            // if (j === 7) {
+            //     console.log(
+            //         k, j, i, '---',
+            //         k[j], k[j - W[i]] + V[i], '^^^',
+            //         k[j - W[i]], V[i]
+            //     )
+            // }
+            
             k[j] = Math.max(k[j], k[j - W[i]] + V[i])
         }
         console.log(k)
     }
+
+    return k[T]
 }
+
+// function foo() {
+//     let prev = []
+//     let current = []
+
+//     // 第一行
+//     for(let i = 0; i < T + 1; i++){
+//         prev.push(Math.floor(i / W[0]) * V[0])
+//     }
+//     test.push([...prev])
+//     for (let i = 1; i < W.length; i++) {
+//         for (let j = W[i]; j < T + 1; j++) {
+//             current[j] = Math.max(prev[j], prev[j - W[i]] + V[i])
+//         }
+//         test.push([...current])
+//         for (let j = 0; j < T + 1; j++) {
+//             prev[j] = current[j]
+//         }
+        
+//     }
+//     console.log(test)
+//     return current[T]
+// }
 
 console.time('运行时间')
 console.log(foo())
