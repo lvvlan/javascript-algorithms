@@ -27,6 +27,7 @@
 ### 题目
 
  - [N皇后问题](./algorithms/NQueen/readme.md)
+ - [背包问题（01背包、完全背包、多重背包）](./algorithms/knapsack/readme.md)
 
 
 ## 一些关于算法的信息
