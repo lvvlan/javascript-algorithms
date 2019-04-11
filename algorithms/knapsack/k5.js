@@ -26,7 +26,7 @@ function trans() {
 
 let transK = trans()
 
-console.log(transK)
+// console.log(transK)
 
 function foo(w, v, t) {
     let k = []
