@@ -17,20 +17,16 @@ let TW = 10
  */
 
 function foo(w, v, t) {
-    // console.log(w, v, t)
     if (w.length === 1 && w[0] <= t) return v[0]
     if (w.length === 1 && w[0] > t) return 0
 
-    if (w.length > 1, w[w.length - 1] <= t) {
+    if (w.length > 1 && w[w.length - 1] <= t) {
 
         let arrW = [...w]
         let lastW = arrW.pop()
         let arrV = [...v]
         let lastV = arrV.pop()
-        let a = foo(arrW, arrV, t);
-        let b = foo(arrW, arrV, t - lastW) + lastV
-        // console.log(w, v, a, b, lastV, t)
-        return Math.max(a, b)
+        return Math.max(foo(arrW, arrV, t), foo(arrW, arrV, t - lastW) + lastV)
     }
 
     if (w.length > 1 && w[w.length - 1] > t) {
@@ -45,4 +41,3 @@ function foo(w, v, t) {
 console.time('运行时间')
 console.log(foo(W,V,TW))
 console.timeEnd('运行时间')
-// foo(W,V,TW)
