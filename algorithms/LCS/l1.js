@@ -1,3 +1,4 @@
+// 打印出一个LCS
 function printLCS(dp, str1, str2, i, j){
     if (i === 0 || j === 0){
         return ""
@@ -15,7 +16,7 @@ function printLCS(dp, str1, str2, i, j){
         }
     }
 }
-
+// 打印出所有LCS
 function printAllLCS(dp, str1, str2, i, j){
     if (i === 0 || j === 0){
         return [""]
@@ -49,22 +50,23 @@ function printAllLCS(dp, str1, str2, i, j){
 function LCS(s1, s2) {
     let dp = (new Array(s1.length + 1)).fill().map(() => [0])
     dp[0] = (new Array(s2.length + 1)).fill(0)
-    let s = ''
+
     for (let i = 1; i < s1.length + 1; i++) {
         for (let j = 1; j < s2.length + 1; j++) {
             if (s1[i - 1] === s2[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1] + 1
             } else {
-                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1])
+                dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j])
             }
         }
     }
-    // console.log(dp)
-    s = printAllLCS(dp, s1, s2, s1.length, s2.length)
-    console.log(s)
-    return dp
+
+    return {
+        dp,
+        LCS: printLCS(dp, s1, s2, s1.length, s2.length)
+    }
 }
 
-// LCS('13456778', '357486782')
-LCS('acdefggh', 'cegdhfghb')
-// LCS('135', '153')
+console.log(LCS('13456778', '357486782'))
+// console.log(LCS('acdefggh', 'cegdhfghb'))
+// console.log(LCS('1375168', '136168'))
