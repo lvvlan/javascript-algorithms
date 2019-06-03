@@ -272,3 +272,10 @@ Ym={3,5,7,4,8,6,7,8,2}
         }
     }
 ```
+
+## 参考
+
+- [javascript 最长公共子序列](https://segmentfault.com/a/1190000012864957)
+- [动态规划 最长公共子序列 过程图解](https://blog.csdn.net/hrn1216/article/details/51534607)
+- [动态规划——最长公共子序列LCS及模板](https://www.cnblogs.com/wkfvawl/p/9362287.html)
+- [最长公共子序列 (LCS) 详解+例题模板（全）](https://blog.csdn.net/lxt_lucia/article/details/81209962)
