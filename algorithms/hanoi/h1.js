@@ -17,7 +17,7 @@ let h = function (n, a, b, c) {
 function move(n, f, a, t) {
     let el = f.shift()
     t.unshift(el)
-    console.log(n, f, a, t)
+    // console.log(n, f, a, t)
 }
 
 let hanoi = function (n, arrA, arrB, arrC) {
@@ -30,4 +30,6 @@ let hanoi = function (n, arrA, arrB, arrC) {
     }
 }
 
-hanoi(3, [1, 2, 3], [], [])
+console.time('15阶汉诺塔递归解法运行时间: ')
+hanoi(15, [1, 2, 3,5,6,7,8,9,10,11,12,13,14,15], [], [])
+console.timeEnd('15阶汉诺塔递归解法运行时间: ')

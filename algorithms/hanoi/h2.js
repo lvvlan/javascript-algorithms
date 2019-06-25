@@ -7,7 +7,7 @@ function hanoi(n , arrA, arrB, arrC) {
     // 一号盘的位置
     let firstPlate = 0
 
-    console.log('start: ', ...loop)
+    // console.log('start: ', ...loop)
 
     while(count != 0) {
         loop[(firstPlate + x) % 3].unshift(loop[firstPlate].shift())
@@ -35,8 +35,10 @@ function hanoi(n , arrA, arrB, arrC) {
         }
     }
 
-    console.log('end: ', ...loop)
+    // console.log('end: ', ...loop)
 }
 
 
-hanoi(4, [1,2,3,4], [], [])
+console.time('15阶汉诺塔递归非解法运行时间: ')
+hanoi(15, [1, 2, 3,5,6,7,8,9,10,11,12,13,14,15], [], [])
+console.timeEnd('15阶汉诺塔递归非解法运行时间: ')
