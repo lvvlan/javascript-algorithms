@@ -30,6 +30,7 @@
  - [背包问题（01背包、完全背包、多重背包）](./algorithms/knapsack/readme.md)
  - [LRU缓存淘汰策略](./algorithms/LRU/readme.md)
  - [最长公共子序列(LCS)](./algorithms/LCS/readme.md)
+ - [汉诺塔: 游戏中的算法](./algorithms/hanoi/readme.md)
 
 
 ## 一些关于算法的信息
